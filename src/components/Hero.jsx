@@ -1,31 +1,20 @@
-// src/components/Hero.jsx
-import React from "react";
-import styles from "./Hero.module.css";
-import homeImage from "../assets/home.png"; // Make sure home.png is in src/assets
+import "./Hero.css";
 
 const Hero = () => {
   return (
-    <section className={styles.home} id="home">
-      <div className={styles.homeText}>
-        <span>Welcome To</span>
-        <h1>
-          FitnessHub <br /> Fitness Club
-        </h1>
-        <p>
-          Your journey to a healthier, stronger you starts here. <br /> Join us
-          and transform your life today!
-        </p>
-        <a href="#" className="btn">
-          Join Us
-        </a>{" "}
-        {/* Using global .btn class */}
-      </div>
-
-      <div className={styles.homeImg}>
-        <img src={homeImage} alt="FitnessHub Home" />
+    <section className="home" id="home">
+      <div className="homeContent">
+        <div className="homeText">
+          <h1>
+            Start Your <br /> Training Now
+          </h1>
+          <p>Start smart with us</p>
+          <a href="#classes-intro" className="btn">
+            START YOUR FREE TRIAL
+          </a>
+        </div>
       </div>
     </section>
   );
 };
-
 export default Hero;

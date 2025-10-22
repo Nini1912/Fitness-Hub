@@ -1,31 +1,23 @@
-// src/components/Testimonial.jsx
-import React from "react";
-import styles from "./Testimonial.module.css";
-import TestimonialCard from "./TestimonialCard"; // Import TestimonialCard
-
-// Import images for testimonials
-import test1Image from "../assets/home.png";
-import test2Image from "../assets/home.png";
-import test3Image from "../assets/home.png";
-
+import "./Testimonial.css";
+import TestimonialCard from "./TestimonialCard";
 const Testimonial = () => {
   const testimonialData = [
     {
-      image: test1Image,
+      image: "placeholder",
       name: "John Doe",
       role: "Gym Member",
       feedback:
         "FitnessHub has transformed my approach to fitness. The trainers are incredibly knowledgeable and supportive, and the community is so welcoming. I've seen amazing progress!",
     },
     {
-      image: test2Image,
+      image: "placeholder",
       name: "Alice Smith",
       role: "Gym Member",
       feedback:
         "I love the variety of classes offered at FitnessHub. Each session is challenging and fun, and I always leave feeling energized. Highly recommend this gym!",
     },
     {
-      image: test3Image,
+      image: "placeholder",
       name: "David Lee",
       role: "Gym Member",
       feedback:
@@ -34,18 +26,16 @@ const Testimonial = () => {
   ];
 
   return (
-    <section className={styles.testimonial} id="testimonial">
+    <section id="testimonial">
       <div className="heading">
-        {" "}
-        {/* Using the global heading class */}
         <span>Testimonial</span>
         <h2>What Our Customers Say</h2>
       </div>
 
-      <div className={styles.testimonialContent}>
+      <div className="testimonialContent">
         {testimonialData.map((testimonial, index) => (
           <TestimonialCard
-            key={index} // Use a unique ID in a real app
+            key={index}
             image={testimonial.image}
             name={testimonial.name}
             role={testimonial.role}

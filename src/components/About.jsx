@@ -1,34 +1,42 @@
-// src/components/About.jsx
-import React from "react";
-import styles from "./About.module.css";
-import aboutImage from "../assets/home.png"; // Make sure about.png is in src/assets
+import "./About.css";
 
 const About = () => {
-  return (
-    <section className={styles.about} id="about">
-      <div className={styles.aboutImg}>
-        <img src={aboutImage} alt="About Us" />
-      </div>
+  // Placeholder for the external image
+  const aboutImageUrl =
+    "https://placehold.co/600x400/222222/e50125?text=BLOG+POST+IMAGE";
 
-      <div className={styles.aboutText}>
-        <span>About Us</span>
+  return (
+    <section className="about" id="about">
+      <div className="aboutText" style={{ textAlign: "left", order: 2 }}>
+        <span>Our Blog</span>
         <h2>
-          Healthy life is <br /> our passion
+          Unlock Your Potential with <br /> Our Expert Insights
         </h2>
         <p>
-          At FitnessHub, we believe that fitness is a journey, not a
-          destination. Our mission is to provide a welcoming and empowering
-          environment where individuals of all fitness levels can achieve their
-          health and wellness goals.
+          Dive into our latest articles on nutrition, workout techniques,
+          recovery strategies, and mental wellness. We provide evidence-based
+          information to help you optimize your fitness journey and live a
+          healthier, stronger life.
         </p>
         <p>
-          With state-of-the-art equipment, expert trainers, and a diverse range
-          of classes, we're dedicated to helping you unlock your full potential.
+          Read our latest post: **'The 5 Essential Rules for Gaining Muscle
+          Mass'**.
         </p>
-        <a href="#" className="btn">
-          Learn More
+        <a href="#contact" className="btn">
+          Read The Blog
         </a>{" "}
-        {/* Using global .btn class */}
+      </div>
+
+      <div className="aboutImg" style={{ order: 1 }}>
+        <img
+          src={aboutImageUrl}
+          alt="About Us"
+          onError={(e) => {
+            e.target.onerror = null;
+            e.target.src =
+              "https://placehold.co/600x400/333/ffffff?text=Image+Unavailable";
+          }}
+        />
       </div>
     </section>
   );

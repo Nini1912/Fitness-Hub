@@ -1,0 +1,98 @@
+.contact {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    gap: 2rem;
+    background: var(--card-bg); 
+}
+
+.contactBox h3 {
+    color: var(--text-color);
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.contactBox h5 {
+    color: var(--text-color);
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 25px;
+}
+
+.contactBox ul {
+    list-style: none; 
+    padding: 0;
+}
+
+.contactBox li {
+    margin-bottom: 10px;
+}
+
+.contactBox li a {
+    display: flex; 
+    align-items: center;
+    gap: 10px;
+    color: #bdbdbd; 
+    font-size: var(--p-font);
+    font-weight: 400;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.contactBox li a:hover {
+    color: var(--main-color);
+    transform: translateX(-5px);
+}
+
+.contactBox p {
+    font-size: var(--p-font);
+    font-weight: 400;
+    color: #bdbdbd; 
+    line-height: 25px;
+    margin-bottom: 25px;
+}
+
+.contactBox form input:nth-child(1) { 
+    padding: 15px;
+    width: 100%;
+    background: #333333; 
+    border: none;
+    outline: none;
+    border-radius: 0.5rem;
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+.contactBox form input:nth-child(2) { 
+    padding: 15px 30px; 
+    width: 100%; 
+}
+
+.social {
+    display: flex; 
+    gap: 15px; 
+}
+
+.social a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: #333333; 
+    color: var(--text-color);
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.social a svg { 
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+}
+
+.social a:hover {
+    background: var(--main-color);
+    transform: scale(0.9) translateY(-5px);
+}

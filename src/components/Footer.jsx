@@ -1,14 +1,11 @@
-// src/components/Footer.jsx
-import React from "react";
-import styles from "./Footer.module.css";
+import"./Footer.css";
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear(); // Dynamically get current year
+  const currentYear = new Date().getFullYear();
   return (
-    <div className={styles.copyright}>
+    <div className="copyright">
       <p>&copy; FitnessHub {currentYear} All Right Reserved.</p>
     </div>
   );
 };
-
 export default Footer;

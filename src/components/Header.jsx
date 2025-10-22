@@ -1,10 +1,14 @@
-// src/components/Header.jsx
-import React, { useState, useEffect } from "react";
-import styles from "./Header.module.css"; // Import the CSS module
+import { useState, useEffect } from "react";
+import "./Header.css";
+import {
+  Menu,
+  X,
+  HeartPulse,
+} from "lucide-react";
 
-const Header = () => {
+const Header = ({ onLoginClick }) => {
+  // <-- Prop added to handle login button click
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isHeaderActive, setIsHeaderActive] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
 
   const toggleMenu = () => {
@@ -13,20 +17,39 @@ const Header = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 0) {
-        setIsHeaderActive(true);
-      } else {
-        setIsHeaderActive(false);
-      }
-
-      // Simple active section detection (can be refined)
-      const sections = ["home", "about", "services", "workout", "contact"];
+      // Updated sections to include the new intro blocks and details sections
+      const sections = [
+        "home",
+        "introservices",
+        "classes-intro",
+        "services-detail",
+        "programs-intro",
+        "workout",
+        "blog-intro",
+        "about",
+        "testimonial",
+        "contact",
+      ];
       let currentActive = "home";
+      // Iterate backwards to find the highest section on screen
       for (let i = sections.length - 1; i >= 0; i--) {
         const section = document.getElementById(sections[i]);
-        if (section && window.scrollY >= section.offsetTop - 100) {
-          // Offset for fixed header
-          currentActive = sections[i];
+        // Use a slightly larger offset for sections like home
+        const offset = sections[i] === "home" ? 300 : 150;
+        if (section && window.scrollY >= section.offsetTop - offset) {
+          // Map the specific section ID back to the main navigation link ID
+          if (sections[i].includes("classes")) {
+            currentActive = "services";
+          } else if (
+            sections[i].includes("programs") ||
+            sections[i] === "workout"
+          ) {
+            currentActive = "workout";
+          } else if (sections[i].includes("blog") || sections[i] === "about") {
+            currentActive = "about";
+          } else {
+            currentActive = sections[i];
+          }
           break;
         }
       }
@@ -34,7 +57,6 @@ const Header = () => {
     };
 
     window.addEventListener("scroll", handleScroll);
-    // Also run once on mount to set initial state
     handleScroll();
 
     return () => {
@@ -44,71 +66,61 @@ const Header = () => {
 
   const handleNavLinkClick = (sectionId) => {
     setActiveSection(sectionId);
-    setIsMenuOpen(false); // Close menu on link click for mobile
+    setIsMenuOpen(false);
   };
 
+  const navLinks = [
+    // Link IDs match the logic in handleScroll/setActiveSection
+    { id: "services", label: "CLASSES" },
+    { id: "workout", label: "PROGRAMS" },
+    { id: "about", label: "BLOG" },
+    { id: "contact", label: "CONTACT" },
+  ];
+
   return (
-    <header
-      className={`${styles.header} ${
-        isHeaderActive ? styles.headerActive : ""
-      }`}
-    >
-      <a href="#home" className={styles.logo}>
-        Fitness<span>Hub</span>
+    <header className="header">
+      <a href="#home" className="logo">
+        <HeartPulse size={30} style={{ color: "var(--main-color)" }} />
+        <span>FITNESS HUB</span>
       </a>
 
-      {/* Boxicons 'bx bx-menu' icon */}
-      <div
-        className={`${styles.menuIcon} bx bx-menu`}
-        id="menu-icon"
-        onClick={toggleMenu}
-      ></div>
+      <div className="menuIcon" id="menu-icon" onClick={toggleMenu}>
+        {isMenuOpen ? <X size={30} /> : <Menu size={30} />}
+      </div>
 
-      <ul className={`${styles.navbar} ${isMenuOpen ? styles.open : ""}`}>
-        <li>
-          <a
-            href="#home"
-            className={activeSection === "home" ? styles.active : ""}
-            onClick={() => handleNavLinkClick("home")}
+      <ul className={`navbar ${isMenuOpen ? "open" : ""}`}>
+        {navLinks.map((link) => (
+          <li key={link.id}>
+            <a
+              // Link targets the main intro block for each section
+              href={
+                link.id === "services"
+                  ? "#classes-intro"
+                  : link.id === "workout"
+                  ? "#programs-intro"
+                  : link.id === "about"
+                  ? "#blog-intro"
+                  : `#${link.id}`
+              }
+              className={activeSection === link.id ? "active" : ""}
+              onClick={() => handleNavLinkClick(link.id)}
+            >
+              {link.label}
+            </a>
+          </li>
+        ))}
+        {/* LOG IN BUTTON: Styled as a prominent red button in the navbar */}
+        <li key="login-item">
+          <div
+            className="logInBtn" // Uses the distinct red button style defined in CSS
+            onClick={(e) => {
+              e.preventDefault();
+              onLoginClick(); // Call the function passed from App to open the modal
+              setIsMenuOpen(false); // Close mobile menu if open
+            }}
           >
-            Home
-          </a>
-        </li>
-        <li>
-          <a
-            href="#about"
-            className={activeSection === "about" ? styles.active : ""}
-            onClick={() => handleNavLinkClick("about")}
-          >
-            About
-          </a>
-        </li>
-        <li>
-          <a
-            href="#services"
-            className={activeSection === "services" ? styles.active : ""}
-            onClick={() => handleNavLinkClick("services")}
-          >
-            Services
-          </a>
-        </li>
-        <li>
-          <a
-            href="#workout"
-            className={activeSection === "workout" ? styles.active : ""}
-            onClick={() => handleNavLinkClick("workout")}
-          >
-            Workout
-          </a>
-        </li>
-        <li>
-          <a
-            href="#contact"
-            className={activeSection === "contact" ? styles.active : ""}
-            onClick={() => handleNavLinkClick("contact")}
-          >
-            Contact
-          </a>
+            LOG IN
+          </div>
         </li>
       </ul>
     </header>

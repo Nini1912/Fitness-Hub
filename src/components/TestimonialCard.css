@@ -1,0 +1,49 @@
+.testimonialBox { 
+    background: var(--card-bg); 
+    box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.4);
+    border-radius: 1rem;
+    padding: 50px 30px;
+    height: 100%; 
+    text-align: center;
+    display: flex; 
+    flex-direction: column;
+    border: 1px solid transparent; 
+    transition: all 0.3s ease;
+}
+
+.testimonialBox:hover {
+    transform: translateY(-5px);
+    border: 1px solid var(--main-color);
+}
+
+.boxImg {
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin: 0 auto; 
+    margin-bottom: 15px;
+    border: 3px solid var(--main-color); 
+}
+
+.testimonialBox h2 { 
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.testimonialBox h4 { 
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--main-color); 
+    margin-bottom: 20px;
+}
+
+.testimonialBox p { 
+    font-size: var(--p-font); 
+    font-weight: 300;
+    line-height: 25px;
+    flex-grow: 1; 
+    color: #bdbdbd;
+    font-style: italic;
+}

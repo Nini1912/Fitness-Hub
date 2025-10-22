@@ -1,0 +1,11 @@
+.copyright {
+    padding: 20px 10%; 
+    background: var(--bg-color); 
+    text-align: center;
+    border-top: 1px solid #333;
+}
+
+.copyright p {
+    color: var(--text-color);
+    font-size: 1rem;
+}

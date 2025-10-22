@@ -1,50 +1,41 @@
-// src/components/Services.jsx
-import React from "react";
-import styles from "./Services.module.css";
-import ServiceCard from "./ServiceCard"; // Import the ServiceCard component
-
-// Import images for service cards
-import s1Image from "../assets/home.png";
-import s2Image from "../assets/home.png";
-import s3Image from "../assets/home.png";
+import "./Services.css";
+import ServiceCard from "./ServiceCard";
+import { Dumbbell, Zap, User } from "lucide-react";
 
 const Services = () => {
-  // Array of service data to map over for ServiceCard components
   const serviceData = [
     {
-      image: s1Image,
-      title: "Strength Training",
+      icon: Dumbbell,
+      title: "Weightlifting Classes",
       description:
-        "Build muscle and increase your power with our guided strength programs.",
+        "Master the fundamental lifts and build strength in a controlled environment.",
     },
     {
-      image: s2Image,
-      title: "Cardio Training",
+      icon: Zap,
+      title: "HIIT & Cardio Classes",
       description:
-        "Improve endurance and burn calories with dynamic cardio workouts.",
+        "High-intensity interval training for maximum calorie burn and endurance boost.",
     },
     {
-      image: s3Image,
-      title: "Fat Loss Training",
+      icon: User,
+      title: "Personal Training",
       description:
-        "Achieve your weight goals with personalized fat loss strategies and exercises.",
+        "One-on-one coaching tailored precisely to your unique goals and schedule.",
     },
   ];
 
   return (
-    <section className={styles.services} id="services">
-      <div className={styles.heading}>
-        <span>Our Services</span>
-        <h2>
-          Access to the best fitness <br /> training in town
-        </h2>
+    // The Classes detail section is the main dark section body
+    <section id="services-detail">
+      <div className="heading">
+        <span>Wide Variety</span>
+        <h2>Explore All Our Group Fitness Classes</h2>
       </div>
-
-      <div className={styles.servicesContent}>
+      <div className="servicesContent">
         {serviceData.map((service, index) => (
           <ServiceCard
-            key={index} // In a real app, use a unique ID from data
-            image={service.image}
+            key={index}
+            icon={service.icon}
             title={service.title}
             description={service.description}
           />

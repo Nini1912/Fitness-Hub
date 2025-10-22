@@ -1,0 +1,11 @@
+.workoutSection {
+    background: var(--bg-color);
+}
+
+.workoutContent {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    align-items: center;
+    margin-top: 4rem;
+}

@@ -1,53 +1,25 @@
-// src/components/Workout.jsx
-import React from "react";
-import styles from "./Workout.module.css";
-import WorkoutCard from "./WorkoutCard"; // Import the WorkoutCard component
-
-// Import images for workout cards
-import w1Image from "../assets/home.png";
-import w2Image from "../assets/home.png";
-import w3Image from "../assets/home.png";
-import w4Image from "../assets/home.png";
+import "./Workout.css";
+import WorkoutCard from "./WorkoutCard"; 
 
 const Workout = () => {
-  // Array of workout data
   const workoutData = [
-    {
-      image: w1Image,
-      title: "Strength Training",
-      duration: "2 Hours",
-    },
-    {
-      image: w2Image,
-      title: "Cardio Training",
-      duration: "2 Hours",
-    },
-    {
-      image: w3Image,
-      title: "Fat Loss Training",
-      duration: "1.5 Hours",
-    },
-    {
-      image: w4Image,
-      title: "Weight Gain Training",
-      duration: "3 Hours",
-    },
+    { title: "28-Day Shred Challenge", duration: "4 Weeks" },
+    { title: "Beginner's Power Building", duration: "12 Weeks" },
+    { title: "Advanced Athlete Prep", duration: "8 Weeks" },
+    { title: "Post-Rehab & Mobility", duration: "Continuous" },
   ];
 
   return (
-    <section className={styles.workout} id="workout">
+    <section id="workout" className="workoutSection">
       <div className="heading">
-        {" "}
-        {/* Using the global heading class */}
-        <span>OUR WORKOUT</span>
-        <h2>Choose Your Workout Program</h2>
+        <span>OUR PROGRAMS</span>
+        <h2>Structured Paths to Success</h2>
       </div>
 
-      <div className={styles.workoutContent}>
+      <div className="workoutContent">
         {workoutData.map((workout, index) => (
           <WorkoutCard
-            key={index} // Use a unique ID in a real app
-            image={workout.image}
+            key={index}
             title={workout.title}
             duration={workout.duration}
           />

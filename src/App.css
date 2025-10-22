@@ -1,35 +1,16 @@
-/* src/App.css */
-
-/* Import Google Fonts - Poppins */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-/* Import Boxicons CSS (for the menu icon) */
-@import url('https://unpkg.com/boxicons@latest/css/boxicons.min.css');
-
-/* Universal Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-    list-style: none;
-    scroll-behavior: smooth; /* Moved here from html */
-}
-
-/* Root CSS Variables */
 :root {
-    --bg-color: #111111;
+    --bg-color: #1a1a1a; /* Dark gray for main background */
+    --light-bg-color: #f7f7f7; /* Light background for contrast sections */
     --text-color: #ffffff;
-    --main-color: #e50125; /* A shade of red/orange */
+    --dark-text-color: #1a1a1a;
+    --main-color: #e50125; /* Red theme color */
     --big-font: 5rem;
     --h2-font: 3rem;
     --p-font: 1.1rem;
-}
-
-/* Base HTML & Body Styles */
-html, body {
-    min-height: 100vh; /* Ensure body takes at least full viewport height */
-    width: 100%;
+    --card-bg: #222222; /* Darker card background */
+    --light-card-bg: #ffffff; /* White card background for light section */
 }
 
 body {
@@ -37,17 +18,14 @@ body {
     background-color: var(--bg-color);
     color: var(--text-color);
     line-height: 1.5;
-    overflow-x: hidden; /* Prevent horizontal scroll */
+    overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
-/* Global Section Padding (for all sections unless overridden) */
 section {
     padding: 100px 10%;
-    /* This padding will be adjusted for specific components as needed,
-       e.g., the home section might need more paddingTop due to fixed header */
 }
 
-/* General button styles - if you want a global .btn class */
 .btn {
     display: inline-block;
     padding: 15px 30px;
@@ -57,15 +35,27 @@ section {
     font-weight: 500;
     border-radius: 0.5rem;
     transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    text-decoration: none; /* Ensure anchor tags using .btn look like buttons */
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .btn:hover {
-    transform: scale(0.9) translateY(-5px);
+    background: #ff3355; /* Slightly brighter red on hover */
+    transform: scale(1.05); /* Slight lift on hover */
 }
 
-/* Media Queries for global padding adjustments */
-@media (max-width: 1700px) {
-    section {
-        padding: 100px 8%;
-    }
+.classes-intro {
+    padding-top: 50px; /* Adjust top padding for a clean break after the cards */
+}
+
+/* Global Section Title/Text */
+.section-text {
+    font-size: var(--p-font); 
+    color: #bdbdbd;
+    max-width: 800px;
+    margin: 0 auto 50px;
+    text-align: center;
 }

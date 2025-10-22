@@ -1,0 +1,27 @@
+.row {
+    background: var(--card-bg); 
+    padding: 50px 30px;
+    border-radius: 1rem;
+    box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.4);
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid transparent; 
+}
+
+.row h3 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.row p {
+    font-size: var(--p-font); 
+    font-weight: 300;
+    line-height: 25px;
+    color: #cccccc;
+}
+
+.row:hover {
+    transform: translateY(-10px);
+    border: 1px solid var(--main-color);
+}
