@@ -1,0 +1,47 @@
+/* src/components/TestimonialCard.module.css */
+
+.box {
+    background: var(--bg-color); /* Using CSS variable */
+    box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.2);
+    border-radius: 1rem;
+    padding: 50px 30px;
+    height: 100%; /* Ensure consistent height */
+    text-align: center;
+    display: flex; /* Use flex to control vertical spacing */
+    flex-direction: column;
+}
+
+.boxImg {
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin: 0 auto; /* Center the image */
+    margin-bottom: 15px;
+}
+
+.boxImg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.box h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.box h4 {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--main-color); /* Using CSS variable */
+    margin-bottom: 20px;
+}
+
+.box p {
+    font-size: var(--p-font); /* Using CSS variable */
+    font-weight: 300;
+    line-height: 25px;
+    flex-grow: 1; /* Allow paragraph to take up remaining space */
+}

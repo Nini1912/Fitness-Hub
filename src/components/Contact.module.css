@@ -1,0 +1,95 @@
+/* src/components/Contact.module.css */
+
+.contact {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjusted to 1fr */
+    gap: 2rem;
+    background: var(--bg-color); /* Using CSS variable */
+    /* Global section padding from App.css will apply */
+}
+
+.contactBox h3 {
+    color: var(--text-color);
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.contactBox h5 {
+    color: var(--text-color);
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 25px;
+}
+
+.contactBox li {
+    margin-bottom: 10px;
+}
+
+.contactBox li a {
+    display: block;
+    color: #bdbdbd; /* Specific gray color */
+    font-size: var(--p-font);
+    font-weight: 400;
+    transition: all 0.3s ease;
+}
+
+.contactBox li a:hover {
+    color: var(--main-color);
+    transform: translateX(-5px);
+}
+
+.contactBox p {
+    font-size: var(--p-font);
+    font-weight: 400;
+    color: #bdbdbd; /* Specific gray color */
+    line-height: 25px;
+    margin-bottom: 25px;
+}
+
+.contactBox form input:nth-child(1) { /* Target email input */
+    padding: 15px;
+    width: 100%;
+    background: #202020; /* Darker background for input */
+    border: none;
+    outline: none;
+    border-radius: 0.5rem;
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+/* For the submit button, we're using the global .btn class.
+   If you want to override its hover specifically for this form,
+   you could add styles here for .contactBox form .btn:hover */
+.contactBox form input:nth-child(2) { /* Target submit button */
+    /* Styles are mostly handled by global .btn, but ensure padding is consistent */
+    padding: 15px 30px; /* Redundant with .btn, but here for clarity if you modify global .btn */
+    width: 100%; /* Make submit button full width within its container */
+}
+
+
+.social {
+    display: flex; /* Use flex for horizontal layout of icons */
+    gap: 15px; /* Replaced margin-right with gap for cleaner spacing */
+}
+
+.social a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: #202020; /* Darker background for social icons */
+    color: var(--text-color);
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.social a i {
+    font-size: 20px;
+}
+
+.social a:hover {
+    background: var(--main-color);
+    transform: scale(0.9) translateY(-5px);
+}

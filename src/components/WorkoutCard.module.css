@@ -1,0 +1,44 @@
+/* src/components/WorkoutCard.module.css */
+
+.box {
+    background: var(--bg-color); /* Using CSS variable */
+    box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.2);
+    border-radius: 1rem;
+    height: 100%; /* Ensure boxes have consistent height */
+    transition: all 0.3s ease;
+    text-align: center;
+    display: flex; /* Use flex for internal layout to push text down */
+    flex-direction: column;
+}
+
+.box img {
+    width: 100%;
+    height: 200px; /* Fixed height for image container */
+    object-fit: cover; /* Cover the container without distortion */
+    border-radius: 1rem 1rem 0 0; /* Only top corners rounded */
+}
+
+.box .text {
+    padding: 20px 0;
+    flex-grow: 1; /* Allow text content to take remaining space */
+    display: flex; /* For centering text vertically if needed */
+    flex-direction: column;
+    justify-content: center;
+}
+
+.box .text h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    line-height: 1.2;
+}
+
+.box .text p {
+    font-size: var(--p-font); /* Using CSS variable */
+    font-weight: 300;
+    line-height: 25px;
+}
+
+.box:hover {
+    transform: translateY(-10px);
+}

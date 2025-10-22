@@ -1,0 +1,12 @@
+/* src/components/Testimonial.module.css */
+
+.testimonialContent {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjusted to 1fr */
+    gap: 2rem;
+    align-items: center;
+    margin-top: 4rem;
+}
+
+/* Heading styles are handled by the global .heading class in App.css */
+/* No specific media queries beyond auto-fit for testimonial-content here */

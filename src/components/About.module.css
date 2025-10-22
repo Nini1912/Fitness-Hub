@@ -1,0 +1,51 @@
+/* src/components/About.module.css */
+
+/* Using CSS variables defined in App.css */
+/* :root { --main-color, --h2-font, --p-font } */
+
+.about {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  gap: 4rem;
+  /* Global section padding will apply from App.css */
+}
+
+.aboutImg img {
+  width: 100%;
+  height: auto;
+}
+
+.aboutText span {
+  color: var(--main-color);
+  font-weight: 500;
+}
+
+.aboutText h2 {
+  font-size: var(--h2-font);
+  margin: 15px 0 30px;
+  line-height: 1.2;
+}
+
+.aboutText p {
+  font-size: var(--p-font);
+  font-weight: 300;
+  margin-bottom: 2rem;
+}
+
+/* --- Media Queries --- */
+@media (max-width: 1090px) {
+  .about {
+    grid-template-columns: 1fr; /* Stack columns on smaller screens */
+    text-align: center;
+  }
+  .aboutImg {
+    margin-top: 2rem; /* Add space between elements when stacked */
+  }
+}
+
+@media (max-width: 600px) {
+  .aboutText h2 {
+    font-size: 2.5rem; /* Smaller heading for very small screens */
+  }
+}

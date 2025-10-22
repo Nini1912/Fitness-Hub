@@ -1,0 +1,29 @@
+/* src/components/Services.module.css */
+
+/* Heading styles specific to this section, though similar to others */
+.heading {
+    text-align: center;
+}
+.heading span {
+    color: var(--main-color);
+    font-weight: 500;
+}
+.heading h2 {
+    font-size: var(--h2-font);
+    line-height: 1.2;
+}
+
+.servicesContent {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjusted to 1fr for cleaner grid behavior */
+    gap: 2rem;
+    align-items: center;
+    margin-top: 4rem;
+}
+
+/* --- Media Queries --- */
+@media (max-width: 600px) {
+    .heading h2 {
+        font-size: 2.5rem;
+    }
+}
