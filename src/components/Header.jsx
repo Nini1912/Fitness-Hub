@@ -7,7 +7,6 @@ import {
 } from "lucide-react";
 
 const Header = ({ onLoginClick }) => {
-  // <-- Prop added to handle login button click
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
 
@@ -17,7 +16,6 @@ const Header = ({ onLoginClick }) => {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Updated sections to include the new intro blocks and details sections
       const sections = [
         "home",
         "introservices",
@@ -70,7 +68,6 @@ const Header = ({ onLoginClick }) => {
   };
 
   const navLinks = [
-    // Link IDs match the logic in handleScroll/setActiveSection
     { id: "services", label: "CLASSES" },
     { id: "workout", label: "PROGRAMS" },
     { id: "about", label: "BLOG" },
@@ -92,7 +89,6 @@ const Header = ({ onLoginClick }) => {
         {navLinks.map((link) => (
           <li key={link.id}>
             <a
-              // Link targets the main intro block for each section
               href={
                 link.id === "services"
                   ? "#classes-intro"
@@ -109,14 +105,13 @@ const Header = ({ onLoginClick }) => {
             </a>
           </li>
         ))}
-        {/* LOG IN BUTTON: Styled as a prominent red button in the navbar */}
         <li key="login-item">
           <div
-            className="logInBtn" // Uses the distinct red button style defined in CSS
+            className="logInBtn"
             onClick={(e) => {
               e.preventDefault();
-              onLoginClick(); // Call the function passed from App to open the modal
-              setIsMenuOpen(false); // Close mobile menu if open
+              onLoginClick();
+              setIsMenuOpen(false);
             }}
           >
             LOG IN

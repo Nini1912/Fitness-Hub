@@ -1,6 +1,6 @@
 import "./Hero.css";
 
-const Hero = () => {
+const Hero = ({ onLoginClick }) => {
   return (
     <section className="home" id="home">
       <div className="homeContent">
@@ -9,7 +9,13 @@ const Hero = () => {
             Start Your <br /> Training Now
           </h1>
           <p>Start smart with us</p>
-          <a href="#classes-intro" className="btn">
+          <a
+            onClick={(e) => {
+              e.preventDefault();
+              onLoginClick();
+            }}
+            className="btn"
+          >
             START YOUR FREE TRIAL
           </a>
         </div>
