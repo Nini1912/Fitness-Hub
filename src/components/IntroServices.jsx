@@ -4,7 +4,7 @@ const IntroServices = () => {
   const cardData = [
     { title: "Fitness Centres", imagePlaceholderText: "FITNESS+CENTRES" },
     { title: "Personal Trainers", imagePlaceholderText: "PERSONAL+TRAINERS" },
-    { title: "Keto Meals", imagePlaceholderText: "KETO+POWER" }, // Using KETO POWER text for the food image placeholder
+    { title: "Keto Meals", imagePlaceholderText: "KETO+POWER" },
   ];
 
   return (

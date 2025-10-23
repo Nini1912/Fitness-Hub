@@ -1,6 +1,5 @@
 import './IntroCard.css'
 const IntroCard = ({ title, imagePlaceholderText }) => {
-  // Placeholder image URL for the card, using the title text
   const placeholderUrl = `https://placehold.co/400x250/000000/e50125?text=${imagePlaceholderText}`;
 
   return (

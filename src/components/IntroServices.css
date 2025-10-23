@@ -1,47 +1,12 @@
 .introServices {
-    /* This section has a light background to contrast with the dark theme */
-    background: var(--light-bg-color); 
-    padding-top: 0; /* Align with the top of the cards extending from the hero */
-    padding-bottom: 0; /* Remove padding to make the next section flush */
+  background: var(--light-bg-color);
+  padding-top: 15%;
+  padding-bottom: 10%;
 }
 
 .introContent {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: -100px; /* Pull the cards up over the hero section boundary */
-}
-
-.introCard {
-    background: var(--light-card-bg);
-    border-radius: 10px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s;
-    height: 100%;
-}
-
-.introCard:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(229, 1, 37, 0.2);
-}
-
-.introCard img {
-    width: 100%;
-    height: 250px; /* Fixed height for image */
-    object-fit: cover;
-    display: block;
-}
-
-.introCard .text {
-    padding: 20px 15px 30px;
-}
-
-.introCard h3 {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: var(--dark-text-color);
-    margin-top: 10px;
-    margin-bottom: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: -100px;
 }
