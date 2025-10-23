@@ -44,7 +44,7 @@ function App() {
       await signOut(auth);
       showUserMessage("You have been successfully logged out.");
     } catch (error) {
-      showUserMessage(`Logout Failed: ${error.message}`);
+      showUserMessage(Logout Failed: ${error.message});
     }
   };
 
@@ -55,8 +55,23 @@ function App() {
         onLoginClick={openLoginModal}
         onLogout={handleLogout}
       />
+<main>
+        <Hero onLoginClick={openLoginModal} />
 
-      <main>{/* ... Your other components (Hero, IntroServices, etc.) */}</main>
+        <IntroServices />
+
+        <Services />
+
+        <Workout />
+
+        <About />
+
+        <Testimonial />
+
+        <Contact />
+      </main>
+
+      <Footer />
 
       <LoginModal
         isOpen={isLoginModalOpen}
