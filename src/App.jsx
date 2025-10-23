@@ -44,7 +44,7 @@ function App() {
       await signOut(auth);
       showUserMessage("You have been successfully logged out.");
     } catch (error) {
-      showUserMessage(Logout Failed: ${error.message});
+      showUserMessage(Logout, Failed, error.message);
     }
   };
 
