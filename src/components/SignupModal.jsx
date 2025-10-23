@@ -1,14 +1,36 @@
 import { X, Target } from "lucide-react";
+import { useState } from "react";
+import { auth, createUserWithEmailAndPassword } from "../firebaseConfig";
 import "./SignupModal.css";
 
 const SignupModal = ({ isOpen, onClose, onSwitchToLogin }) => {
-  const overlayClasses = `modal-overlay ${isOpen ? "open" : ""}`;
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [error, setError] = useState("");
 
   if (!isOpen) return null;
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Signup form submitted. (Logic to be implemented)");
+    setError("");
+
+    if (password !== confirmPassword) {
+      setError("Passwords do not match.");
+      return;
+    }
+
+    try {
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      console.log("User signed up successfully:", userCredential.user.email);
+    } catch (error) {
+      console.error("Sign up error:", error.message);
+      setError(error.message);
+    }
   };
 
   const handleContentClick = (e) => {
@@ -16,7 +38,7 @@ const SignupModal = ({ isOpen, onClose, onSwitchToLogin }) => {
   };
 
   return (
-    <div className={overlayClasses} onClick={onClose}>
+    <div className={`modal-overlay ${isOpen ? "open" : ""}`} onClick={onClose}>
       <div className="modal-content" onClick={handleContentClick}>
         <div className="modal-header">
           <h2>
@@ -36,19 +58,53 @@ const SignupModal = ({ isOpen, onClose, onSwitchToLogin }) => {
         </div>
         <form onSubmit={handleSubmit} className="modal-body">
           <div className="input-group">
-            <input type="email" placeholder="Email Address" required />
+            <input
+              type="email"
+              placeholder="Email Address"
+              required
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
           </div>
           <div className="input-group">
             <input type="text" placeholder="Full Name" required />
           </div>
           <div className="input-group">
-            <input type="password" placeholder="Password" required />
+            <input
+              type="password"
+              placeholder="Password"
+              required
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
           </div>
           <div className="input-group">
-            <input type="password" placeholder="Confirm Password" required />
+            <input
+              type="password"
+              placeholder="Confirm Password"
+              required
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+            />
           </div>
 
-          <button type="submit" className="modal-submit-btn">
+          {error && (
+            <p
+              style={{
+                color: "var(--main-color)",
+                textAlign: "center",
+                fontSize: "0.9rem",
+              }}
+            >
+              {error}
+            </p>
+          )}
+
+          <button
+            type="submit"
+            className="btn"
+            style={{ width: "100%", padding: "15px 0", marginTop: "10px" }}
+          >
             SIGN UP
           </button>
         </form>
