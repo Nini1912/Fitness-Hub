@@ -1,10 +1,17 @@
+// src/firebase.js
+
 import { initializeApp } from "firebase/app";
 import {
   getAuth,
-  createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  createUserWithEmailAndPassword,
+  signOut,
+  onAuthStateChanged,
+  updateProfile,
+  sendPasswordResetEmail,
 } from "firebase/auth";
 
+// 🚨 Configuration copied directly from your original file
 const firebaseConfig = {
   apiKey: "AIzaSyAhzuzc-oOMoo-3bDz_FXK1t6gcVTaS9i0",
   authDomain: "fitness-hub-6333b.firebaseapp.com",
@@ -16,9 +23,15 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-
-// Initialize Firebase Authentication and export the service
 const auth = getAuth(app);
 
-// Exporting necessary functions for use in modals
-export { auth, createUserWithEmailAndPassword, signInWithEmailAndPassword };
+// Exporting necessary functions
+export {
+  auth,
+  signInWithEmailAndPassword,
+  createUserWithEmailAndPassword,
+  signOut,
+  onAuthStateChanged,
+  updateProfile,
+  sendPasswordResetEmail,
+};
