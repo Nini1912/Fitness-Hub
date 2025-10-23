@@ -1,10 +1,13 @@
 import "./IntroServices.css";
 import IntroCard from "./IntroCard";
+import fitnessCentre from "../assets/FitnessCentre.png";
+import trainerFit from "../assets/TrainerFit.png";
+import ketoMealFit from "../assets/KetoMealFit.png";
 const IntroServices = () => {
   const cardData = [
-    { title: "Fitness Centres", imagePlaceholderText: "FITNESS+CENTRES" },
-    { title: "Personal Trainers", imagePlaceholderText: "PERSONAL+TRAINERS" },
-    { title: "Keto Meals", imagePlaceholderText: "KETO+POWER" },
+    { title: "Fitness Centres", imagePlaceholder: fitnessCentre },
+    { title: "Personal Trainers", imagePlaceholder: trainerFit },
+    { title: "Keto Meals", imagePlaceholder: ketoMealFit },
   ];
 
   return (
@@ -18,7 +21,7 @@ const IntroServices = () => {
           <IntroCard
             key={index}
             title={card.title}
-            imagePlaceholderText={card.imagePlaceholderText}
+            imagePlaceholder={card.imagePlaceholder}
           />
         ))}
       </div>

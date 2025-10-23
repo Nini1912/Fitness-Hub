@@ -2,14 +2,12 @@ import "./WorkoutCard.css";
 import {
   Calendar,
 } from "lucide-react";
-const WorkoutCard = ({ title, duration }) => {
-  const placeholderUrl =
-    "https://placehold.co/300x200/222222/e50125?text=PROGRAM+IMAGE";
+const WorkoutCard = ({ title, duration, placeholderImage }) => {
 
   return (
     <div className="box">
       <img
-        src={placeholderUrl}
+        src={placeholderImage}
         alt={title}
         onError={(e) => {
           e.target.onerror = null;

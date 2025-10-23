@@ -1,11 +1,9 @@
-import './IntroCard.css'
-const IntroCard = ({ title, imagePlaceholderText }) => {
-  const placeholderUrl = `https://placehold.co/400x250/000000/e50125?text=${imagePlaceholderText}`;
-
+import "./IntroCard.css";
+const IntroCard = ({ title, imagePlaceholder }) => {
   return (
     <div className="introCard">
       <img
-        src={placeholderUrl}
+        src={imagePlaceholder}
         alt={title}
         onError={(e) => {
           e.target.onerror = null;

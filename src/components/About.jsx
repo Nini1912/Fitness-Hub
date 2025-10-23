@@ -1,9 +1,7 @@
 import "./About.css";
+import loginfit from "../assets/Loginfit.png";
 
 const About = () => {
-  const aboutImageUrl =
-    "https://placehold.co/600x400/222222/e50125?text=BLOG+POST+IMAGE";
-
   return (
     <section className="about" id="about">
       <div className="aboutText" style={{ textAlign: "left", order: 2 }}>
@@ -28,7 +26,7 @@ const About = () => {
 
       <div className="aboutImg" style={{ order: 1 }}>
         <img
-          src={aboutImageUrl}
+          src={loginfit}
           alt="About Us"
           onError={(e) => {
             e.target.onerror = null;
