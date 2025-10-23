@@ -9,6 +9,10 @@ const IntroServices = () => {
 
   return (
     <section id="introservices" className="introServices">
+      <div className="heading">
+        <span>OUR SERVICES</span>
+        <h2>bla bla bla bla bla</h2>
+      </div>
       <div className="introContent">
         {cardData.map((card, index) => (
           <IntroCard

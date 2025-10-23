@@ -1,12 +1,29 @@
 .introServices {
-  background: var(--light-bg-color);
-  padding-top: 15%;
-  padding-bottom: 10%;
+  background: var(--bg-color);
+  padding-top: 5%;
+  padding-bottom: 5%;
 }
 
 .introContent {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  margin-top: -100px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    align-items: center;
+    margin-top: 4rem;
+}
+.heading {
+  text-align: center;
+}
+.heading span {
+  color: var(--main-color);
+  font-weight: 500;
+}
+.heading h2 {
+  font-size: var(--h2-font);
+  line-height: 1.2;
+}
+@media (max-width: 600px) {
+  .heading h2 {
+    font-size: 2.5rem;
+  }
 }

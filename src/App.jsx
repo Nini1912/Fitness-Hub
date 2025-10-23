@@ -42,30 +42,9 @@ function App() {
 
         <IntroServices />
 
-        <SectionIntroBlock
-          id="classes-intro"
-          title="Our Classes"
-          description="This section is the destination for the 'CLASSES' link. Explore our wide range of group fitness classes and schedules."
-          isLightBackground={true}
-        />
-
         <Services />
 
-        <SectionIntroBlock
-          id="programs-intro"
-          title="Custom Programs"
-          description="This section is the destination for the 'PROGRAMS' link. Find a structured training program tailored to your fitness goals."
-          isLightBackground={true}
-        />
-
         <Workout />
-
-        <SectionIntroBlock
-          id="blog-intro"
-          title="Latest Blog Posts"
-          description="This section is the destination for the 'BLOG' link. Read our tips, nutrition guides, and motivation articles."
-          isLightBackground={true}
-        />
 
         <About />
 

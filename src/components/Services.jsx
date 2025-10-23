@@ -25,7 +25,6 @@ const Services = () => {
   ];
 
   return (
-    // The Classes detail section is the main dark section body
     <section id="services-detail">
       <div className="heading">
         <span>Wide Variety</span>

@@ -1,7 +1,6 @@
 import "./About.css";
 
 const About = () => {
-  // Placeholder for the external image
   const aboutImageUrl =
     "https://placehold.co/600x400/222222/e50125?text=BLOG+POST+IMAGE";
 
