@@ -34,7 +34,6 @@
     color: #cccccc;
 }
 
-/* --- Media Queries for About --- */
 @media (max-width: 1090px) {
     .about {
         grid-template-columns: 1fr; 

@@ -1,10 +1,6 @@
 import { useState, useEffect } from "react";
 import "./Header.css";
-import {
-  Menu,
-  X,
-  HeartPulse,
-} from "lucide-react";
+import { Menu, X, HeartPulse } from "lucide-react";
 
 const Header = ({ onLoginClick }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -29,13 +25,10 @@ const Header = ({ onLoginClick }) => {
         "contact",
       ];
       let currentActive = "home";
-      // Iterate backwards to find the highest section on screen
       for (let i = sections.length - 1; i >= 0; i--) {
         const section = document.getElementById(sections[i]);
-        // Use a slightly larger offset for sections like home
         const offset = sections[i] === "home" ? 300 : 150;
         if (section && window.scrollY >= section.offsetTop - offset) {
-          // Map the specific section ID back to the main navigation link ID
           if (sections[i].includes("classes")) {
             currentActive = "services";
           } else if (
@@ -91,11 +84,11 @@ const Header = ({ onLoginClick }) => {
             <a
               href={
                 link.id === "services"
-                  ? "#classes-intro"
+                  ? "#services"
                   : link.id === "workout"
-                  ? "#programs-intro"
+                  ? "#workout"
                   : link.id === "about"
-                  ? "#blog-intro"
+                  ? "#about"
                   : `#${link.id}`
               }
               className={activeSection === link.id ? "active" : ""}

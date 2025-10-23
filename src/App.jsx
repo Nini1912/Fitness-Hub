@@ -4,7 +4,6 @@ import "./App.css";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import IntroServices from "./components/IntroServices";
-import SectionIntroBlock from "./components/SectionIntroBlock";
 import Services from "./components/Services";
 import Workout from "./components/Workout";
 import About from "./components/About";

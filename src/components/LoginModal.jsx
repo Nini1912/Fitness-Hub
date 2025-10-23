@@ -1,74 +1,40 @@
+import { X } from "lucide-react";
 import "./LoginModal.css";
+
 const LoginModal = ({ isOpen, onClose, onSwitchToSignup }) => {
-  // <-- Added onSwitchToSignup prop
-  // Return null if the modal is not open
-  if (!isOpen) return null;
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Here you would typically handle authentication (e.g., Firebase sign-in)
-    console.log("Login form submitted. (Logic to be implemented)");
-    // onClose();
-  };
-
-  // Stop click events on the content from propagating to the overlay (to prevent closing on content click)
-  const handleContentClick = (e) => {
-    e.stopPropagation();
-  };
+  const overlayClasses = `modal-overlay ${isOpen ? "open" : ""}`;
 
   return (
-    <div className={`modal-overlay ${isOpen ? "open" : ""}`} onClick={onClose}>
-      <div className="modal-content" onClick={handleContentClick}>
+    <div className={overlayClasses} onClick={onClose}>
+      <div className="modal-content" onClick={(e) => e.stopPropagation()}>
         <div className="modal-header">
-          <h2>
-            {/* User icon for Member Login */}
-            <User
-              size={24}
-              style={{ color: "var(--main-color)", marginRight: "10px" }}
-            />
-            MEMBER LOGIN
-          </h2>
-          <button
-            className="modal-close-btn"
-            onClick={onClose}
-            aria-label="Close Modal"
-          >
+          <h2>LOG IN</h2>
+          <button className="modal-close-btn" onClick={onClose}>
             <X size={24} />
           </button>
         </div>
-        <form onSubmit={handleSubmit} className="modal-body">
+
+        <form>
           <div className="input-group">
-            <input type="email" placeholder="Email Address" required />
+            <input type="email" placeholder="Email" required />
           </div>
           <div className="input-group">
             <input type="password" placeholder="Password" required />
           </div>
 
           <div className="forgot-password">
-            <a href="#" onClick={(e) => e.preventDefault()}>
-              Forgot Password?
-            </a>
+            <a href="#">Forgot Password?</a>
           </div>
 
-          <button
-            type="submit"
-            className="btn"
-            style={{ width: "100%", padding: "15px 0" }}
-          >
+          <button type="submit" className="modal-submit-btn">
             LOG IN
           </button>
         </form>
 
         <div className="modal-footer">
-          New here?{" "}
-          <a
-            href="#"
-            onClick={(e) => {
-              e.preventDefault();
-              onSwitchToSignup();
-            }}
-          >
-            Switch to Sign Up
+          Don't have an account?{" "}
+          <a href="#" onClick={onSwitchToSignup}>
+            Sign Up
           </a>
         </div>
       </div>

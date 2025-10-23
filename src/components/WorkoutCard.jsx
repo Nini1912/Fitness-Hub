@@ -3,7 +3,6 @@ import {
   Calendar,
 } from "lucide-react";
 const WorkoutCard = ({ title, duration }) => {
-  // Placeholder URL for image
   const placeholderUrl =
     "https://placehold.co/300x200/222222/e50125?text=PROGRAM+IMAGE";
 

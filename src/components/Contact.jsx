@@ -18,7 +18,6 @@ const Contact = () => {
 
   return (
     <section className="contact" id="contact">
-      {/* Box 1: FitnessHub Info & Social */}
       <div className="contactBox">
         <h3>FitnessHub</h3>
         <h5>Connect With Us</h5>
@@ -35,7 +34,6 @@ const Contact = () => {
         </div>
       </div>
 
-      {/* Box 2: Quick Links */}
       <div className="contactBox">
         <h3>Quick Links</h3>
         <ul>
@@ -60,7 +58,6 @@ const Contact = () => {
         </ul>
       </div>
 
-      {/* Box 3: Contact Info */}
       <div className="contactBox">
         <h3>Contact Info</h3>
         <ul>
@@ -85,7 +82,6 @@ const Contact = () => {
         </ul>
       </div>
 
-      {/* Box 4: Newsletter */}
       <div className="contactBox">
         <h3>Newsletter</h3>
         <p>Subscribe to our newsletter for the latest updates.</p>

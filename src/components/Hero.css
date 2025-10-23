@@ -53,7 +53,6 @@
   font-weight: 600;
 }
 
-/* --- Media Queries for Hero --- */
 @media (max-width: 1090px) {
   .homeText h1 {
     font-size: 3.5rem;

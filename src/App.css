@@ -1,16 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 :root {
-    --bg-color: #1a1a1a; /* Dark gray for main background */
-    --light-bg-color: #f7f7f7; /* Light background for contrast sections */
+    --bg-color: #1a1a1a;
+    --light-bg-color: #f7f7f7; 
     --text-color: #ffffff;
     --dark-text-color: #1a1a1a;
-    --main-color: #e50125; /* Red theme color */
+    --main-color: #e50125;
     --big-font: 5rem;
     --h2-font: 3rem;
     --p-font: 1.1rem;
-    --card-bg: #222222; /* Darker card background */
-    --light-card-bg: #ffffff; /* White card background for light section */
+    --card-bg: #222222; 
+    --light-card-bg: #ffffff;
 }
 
 body {
@@ -37,21 +37,20 @@ section {
     transition: all 0.3s ease;
     border: none;
     cursor: pointer;
-    text-decoration: none; /* Ensure anchor tags using .btn look like buttons */
+    text-decoration: none; 
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 
 .btn:hover {
-    background: #ff3355; /* Slightly brighter red on hover */
-    transform: scale(1.05); /* Slight lift on hover */
+    background: #ff3355;
+    transform: scale(1.05);
 }
 
 .classes-intro {
-    padding-top: 50px; /* Adjust top padding for a clean break after the cards */
+    padding-top: 50px; 
 }
 
-/* Global Section Title/Text */
 .section-text {
     font-size: var(--p-font); 
     color: #bdbdbd;

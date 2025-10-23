@@ -1,26 +1,25 @@
+import { X, Target } from "lucide-react";
 import "./SignupModal.css";
+
 const SignupModal = ({ isOpen, onClose, onSwitchToLogin }) => {
-  // <-- Added onSwitchToLogin prop
+  const overlayClasses = `modal-overlay ${isOpen ? "open" : ""}`;
+
   if (!isOpen) return null;
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Here you would typically handle user creation (e.g., Firebase sign-up)
     console.log("Signup form submitted. (Logic to be implemented)");
-    // onClose();
   };
 
-  // Stop click events on the content from propagating to the overlay (to prevent closing on content click)
   const handleContentClick = (e) => {
     e.stopPropagation();
   };
 
   return (
-    <div className={`modal-overlay ${isOpen ? "open" : ""}`} onClick={onClose}>
+    <div className={overlayClasses} onClick={onClose}>
       <div className="modal-content" onClick={handleContentClick}>
         <div className="modal-header">
           <h2>
-            {/* Target icon for 'Create Account' as a goal-setting visual */}
             <Target
               size={24}
               style={{ color: "var(--main-color)", marginRight: "10px" }}
@@ -49,11 +48,7 @@ const SignupModal = ({ isOpen, onClose, onSwitchToLogin }) => {
             <input type="password" placeholder="Confirm Password" required />
           </div>
 
-          <button
-            type="submit"
-            className="btn"
-            style={{ width: "100%", padding: "15px 0", marginTop: "10px" }}
-          >
+          <button type="submit" className="modal-submit-btn">
             SIGN UP
           </button>
         </form>
